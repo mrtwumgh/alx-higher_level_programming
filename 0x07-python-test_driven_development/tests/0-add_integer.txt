@@ -1,0 +1,67 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+First Import the ``add_integer`` from the ``0-add_integer`` module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+    >>> print(add_integer(1, 2))
+    3
+
+    >>> print(add_integer(100, -2))
+    98
+    
+    >>> print(add_integer(2))
+    100
+
+    >>> print(add_integer(100.3, -2))
+    98
+
+    >>> print(add_integer(4, "School"))
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> print(add_integer(None))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+    
+    >>> add_integer(True, False)
+    1
+
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+    >>> add_integer(2**31 - 1, 1)
+    2147483648
+
+    >>> add_integer(-2**31 + 1, -1)
+    -2147483648
+
+    >>> add_integer(float('inf'), float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('-inf'), float('-inf'))  # should return float('-inf')
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+    
+    >>> add_integer(-1, -1)
+    -2
+    
+    >>> add_integer(1, -1)
+    0
