@@ -7,7 +7,7 @@ else:
     last_digit = number % -10
 
 digit_5 = "Last digit of {:d} is {:d} and is greater than 5"
-digit_0 = "Last digit of {:d} is {:d} and is zero"
+digit_0 = "Last digit of {:d} is {:d} and is 0"
 digit_6 = "Last digit of {:d} is {:d} and is less than 6 and not 0"
 
 if last_digit > 5:
