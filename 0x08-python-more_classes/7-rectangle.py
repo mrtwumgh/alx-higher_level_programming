@@ -95,7 +95,7 @@ class Rectangle:
             result = ""
             for i in range(self.__height):
                 symbol = self.print_symbol
-                if isinstance(self.print_symbol, list):
+                if isinstance(self.print_symbol, (list, int, float)):
                     symbol = str(self.print_symbol)
                 result += symbol * self.__width + "\n"
             return result[:-1]
