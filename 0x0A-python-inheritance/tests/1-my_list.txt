@@ -58,3 +58,12 @@ How to use 1-my_list.py
 	[2, 4, 3, 7]
 	>>> mylist.print_sorted()
 	[2, 3, 4, 7]
+
+	>>> a = [2, 3, 10, 3, 4]
+	>>> mylist = MyList(a)
+	>>> print(mylist)
+	[2, 3, 10, 3, 4]
+	>>> mylist.print_sorted()
+	[2, 3, 3, 4, 10]
+	>>> a
+	[2, 3, 10, 3, 4]
