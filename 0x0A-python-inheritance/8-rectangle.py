@@ -24,9 +24,16 @@ class BaseGeometry:
         elif value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
+
 class Rectangle(BaseGeometry):
     """
     A class that defines a rectangle
     """
     def __init__(self, width, height):
-
+        """
+        Initializes the rectangle
+        """
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
