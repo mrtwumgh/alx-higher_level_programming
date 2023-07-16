@@ -2,7 +2,6 @@
 """
 A module for a student class
 """
-import json
 
 
 class Student:
