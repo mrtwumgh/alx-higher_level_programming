@@ -73,7 +73,9 @@ How to use 1-my_list.py
 	>>> mylist.append(2)
 	>>> mylist.append(3)
 	>>> mylist.append(1)
-	>>> sorted_list = mylist.print_sorted()
+	>>> print(mylist)
+	[4, 2, 3, 1]
+	>>> mylist.print_sorted()
 	[1, 2, 3, 4]
-	>>> print(sorted_list)
-	None
+	>>> print(mylist)
+	[4, 2, 3, 1]
