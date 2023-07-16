@@ -67,3 +67,13 @@ How to use 1-my_list.py
 	[2, 3, 10, 3, 4]
 	>>> mylist.print_sorted()
 	[2, 3, 3, 4, 10]
+
+	>>> mylist = MyList()
+	>>> mylist.append(4)
+	>>> mylist.append(2)
+	>>> mylist.append(3)
+	>>> mylist.append(1)
+	>>> sorted_list = mylist.print_sorted()
+	[1, 2, 3, 4]
+	>>> print(sorted_list)
+	None
