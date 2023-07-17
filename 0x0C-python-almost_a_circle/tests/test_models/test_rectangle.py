@@ -74,6 +74,14 @@ class TestRectangleClass(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "####\n####\n####\n")
 
+        r1 = Rectangle(4, 3, 2, 1)
+        output = StringIO()
+        sys.stdout = output
+        r1.display()
+        sys.stdout = sys.__stdout__
+        expected = "\n  ####\n  ####\n  ####\n"
+        self.assertEqual(output.getvalue(), expected)
+
     def test_with_x_y(self):
         """
         test the printout with x and y specified
@@ -83,7 +91,7 @@ class TestRectangleClass(unittest.TestCase):
         sys.stdout = output
         r.display()
         sys.stdout = sys.__stdout__
-        self.assertEqual(output.getvalue(), "##\n##\n##\n")
+        self.assertEqual(output.getvalue(), "\n\n  ##\n  ##\n  ##\n")
 
     def test_str(self):
         """
