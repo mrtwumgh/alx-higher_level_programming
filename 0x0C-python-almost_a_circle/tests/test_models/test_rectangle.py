@@ -5,7 +5,8 @@ tests for the class rectangle
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
-
+from io import StringIO
+import sys
 
 class TestRectangleClass(unittest.TestCase):
     """
@@ -62,6 +63,27 @@ class TestRectangleClass(unittest.TestCase):
         r = Rectangle(5, 10)
         self.assertEqual(r.area(), 50)
 
+    def test_display(self):
+        """
+        tests the printout of rectangle
+        """
+        r = Rectangle(4, 3)
+        output = StringIO()
+        sys.stdout = output
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "####\n####\n####\n")
+
+    def test_with_x_y(self):
+        """
+        test the printout with x and y specified
+        """
+        r = Rectangle(2, 3, 2, 2)
+        output = StringIO()
+        sys.stdout = output
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "##\n##\n##\n")
 
 if __name__ == "__main__":
     unittest.main()

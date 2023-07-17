@@ -93,3 +93,10 @@ class Rectangle(Base):
         returns the value of rectangle
         """
         return self.__width * self.__height
+
+    def display(self):
+        """
+        prints the rectangle to stdout
+        """
+        for n in range(self.__height):
+            print("#" * self.__width)
