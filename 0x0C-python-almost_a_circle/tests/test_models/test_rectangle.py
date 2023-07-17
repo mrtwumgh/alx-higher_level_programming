@@ -44,16 +44,24 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             r.height = -2
 
-        def test_x(self):
-            """
-            tests x
-            """
-            r = Rectangle(12, 34)
-            self.assertEqual(r.x, 0)
-            with self.assertRaisesRegex(TypeError, "x must be an intger"):
-                r.x = "not an int"
-            with self.assertRaisees(VaueError):
-                r.y = -1
+    def test_x(self):
+        """
+        tests x
+        """
+        r = Rectangle(12, 34)
+        self.assertEqual(r.x, 0)
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r.x = "not an int"
+        with self.assertRaises(ValueError):
+            r.y = -1
+
+    def test_area(self):
+        """
+        tests the return value of area
+        """
+        r = Rectangle(5, 10)
+        self.assertEqual(r.area(), 50)
+
 
 if __name__ == "__main__":
     unittest.main()
