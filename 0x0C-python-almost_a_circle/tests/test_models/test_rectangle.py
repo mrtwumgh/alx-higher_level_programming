@@ -85,5 +85,12 @@ class TestRectangleClass(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "##\n##\n##\n")
 
+    def test_str(self):
+        """
+        tests the magic method __str__
+        """
+        r = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(str(r), '[Rectangle] (5) 3/4 - 1/2')
+
 if __name__ == "__main__":
     unittest.main()
