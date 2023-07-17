@@ -111,3 +111,23 @@ class Rectangle(Base):
         t = f" {self.__x}/{self.__y} - {self.__width}/{self.__height}"
         fr = s + t
         return fr
+
+    def update(self, *args, **kwargs):
+        """
+        assigns an argument to each attribute"
+        """
+        if len(args):
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
