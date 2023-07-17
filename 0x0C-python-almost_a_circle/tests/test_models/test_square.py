@@ -28,6 +28,39 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(s1.id, 99)
 
     def test_str(self):
+        """
+        tests string representation
+        """
         s = Square(5)
         output = f"[Square] ({s.id}) {s.x}/{s.y} - {s.width}"
         self.assertEqual(str(s), output)
+
+    def test_size_getter(self):
+        """
+        tests getter
+        """
+        s = Square(5)
+        self.assertEqual(s.size, 5)
+
+    def test_size_setter(self):
+        """
+        tests setter
+        """
+        s = Square(5)
+        s.size = 10
+        self.assertEqual(s.width, 10)
+        self.assertEqual(s.height, 10)
+
+
+    def test_size_setter_invalid_value(self):
+        """
+        tests invalid value
+        """
+        s = Square(5)
+        with self.assertRaises(TypeError):
+            s.size = "not an int"
+        with self.assertRaises(ValueError):
+            s.size = -1
+
+if __name__ == "__main__":
+    unittest.main()
