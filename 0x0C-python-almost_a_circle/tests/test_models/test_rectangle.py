@@ -8,6 +8,7 @@ from models.rectangle import Rectangle
 from io import StringIO
 import sys
 
+
 class TestRectangleClass(unittest.TestCase):
     """
     test methods
@@ -136,13 +137,17 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(r.y, 0)
 
     def test_to_dictionary(self):
+        Rectangle._Base__nb_objects = 0
         r = Rectangle(10, 2, 1, 9)
         dic = r.to_dictionary()
-        self.assertEqual(dic, {'id': 5, 'width': 10, 'height': 2, 'x': 1, 'y': 9})
+        output = {'id': 7, 'width': 10, 'height': 2, 'x': 1, 'y': 9}
+        self.assertEqual(dic, output)
 
         r = Rectangle(1, 1)
         dic = r.to_dictionary()
-        self.assertEqual(dic, {'id': 6, 'width': 1, 'height': 1, 'x': 0, 'y': 0})
+        output = {'id': 8, 'width': 1, 'height': 1, 'x': 0, 'y': 0}
+        self.assertEqual(dic, output)
+
 
 if __name__ == "__main__":
     unittest.main()

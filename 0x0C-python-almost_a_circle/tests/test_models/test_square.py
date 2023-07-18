@@ -51,7 +51,6 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(s.width, 10)
         self.assertEqual(s.height, 10)
 
-
     def test_size_setter_invalid_value(self):
         """
         tests invalid value
@@ -91,7 +90,7 @@ class TestSquareClass(unittest.TestCase):
         s = Square(3, 1, 2, 99)
         dic = s.to_dictionary()
         self.assertEqual(dic, {'id': 99, 'size': 3, 'x': 1, 'y': 2})
-        
+
 
 if __name__ == "__main__":
     unittest.main()
