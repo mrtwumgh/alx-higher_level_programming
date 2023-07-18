@@ -62,5 +62,28 @@ class TestSquareClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             s.size = -1
 
+    def test_args(self):
+        """
+        test args
+        """
+        s = Square(3)
+        s.update(1, 2, 3, 4)
+        self.assertEqual(s.id, 1)
+        self.assertEqual(s.size, 2)
+        self.assertEqual(s.x, 3)
+        self.assertEqual(s.y, 4)
+
+    def test_kwargs(self):
+        """
+        test kwargs
+        """
+        s = Square(3)
+        s.update(id=1, size=2, x=3, y=4)
+        self.assertEqual(s.id, 1)
+        self.assertEqual(s.size, 2)
+        self.assertEqual(s.x, 3)
+        self.assertEqual(s.y, 4)
+        
+
 if __name__ == "__main__":
     unittest.main()
