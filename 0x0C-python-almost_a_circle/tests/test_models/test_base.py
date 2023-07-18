@@ -36,5 +36,33 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(base_3.id, 1)
         self.assertEqual(base_4.id, 2)
 
+    def test_to_json_string(self):
+        """
+        test to_json method
+        """
+        list_dictionaries = [
+                {'id': 1,
+                 'width': 10,
+                 'height': 7, 
+                 'x': 2, 
+                 'y': 8
+                 }, 
+                {'id': 2,
+                 'width': 2, 
+                 'height': 4, 
+                 'x': 0, 
+                 'y': 0
+                }]
+        s1 = '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8},' 
+        s2 = ' {"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]'
+        output = s1 + s2
+        self.assertEqual(Base.to_json_string(list_dictionaries), output)
+
+        list_dictionaries = []
+        self.assertEqual(Base.to_json_string(list_dictionaries), [])
+
+        list_dictionaries = None
+        self.assertEqual(Base.to_json_string(list_dictionaries), [])
+
 if __name__ == "__main__":
     unittest.main()
