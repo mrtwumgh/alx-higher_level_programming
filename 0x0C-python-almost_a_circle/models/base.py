@@ -27,7 +27,7 @@ class Base:
         returns the JSON string representation
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return []
+            return "[]"
         else:
             return json.dumps(list_dictionaries)
 
@@ -66,3 +66,16 @@ class Base:
         dummy.update(**dictionary)
         return dummy
 
+    @classmethod
+    def load_from_file(cls):
+        """
+        returns a list of instances
+        """
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r") as f:
+                content = f.read()
+                list_of_dicts = cls.from_json_string(content)
+                return [cls.create(**d) for d in list_of_dicts]
+        except FileNotFoundError:
+            return []
