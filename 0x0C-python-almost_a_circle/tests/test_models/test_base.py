@@ -5,6 +5,7 @@ Tests for the class base
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBaseClass(unittest.TestCase):
@@ -15,6 +16,7 @@ class TestBaseClass(unittest.TestCase):
         """
         test attribute id
         """
+        Base._Base__nb_objects = 0
         base_1 = Base()
         base_2 = Base()
         self.assertEqual(base_1.id, 1)
@@ -80,6 +82,29 @@ class TestBaseClass(unittest.TestCase):
         output = s1 + s2
         with open("Rectangle.json", "r") as f:
             self.assertEqual(f.read(), output)
+
+    def test_from_json_string(self):
+        """
+        tests the from_json_string method
+        """
+        list_input = [{'id': 89, 'width': 10}]
+        json_list_input = Base.to_json_string(list_input)
+        list_output = Base.from_json_string(json_list_input)
+        self.assertEqual(list_output, [{'id': 89, 'width': 10}])
+
+    def test_create(self):
+        """
+        tests the create method
+        """
+        Base._Base__nb_objects = 0
+        b1 = Rectangle.create(id=42, width=3, height=4)
+        self.assertEqual(b1.id, 42)
+        self.assertEqual(b1.width, 3)
+        self.assertEqual(b1.height, 4)
+
+        b2 = Square.create(id=24, size=5)
+        self.assertEqual(b2.id, 24)
+        self.assertEqual(b2.size, 5)
 
 
 if __name__ == "__main__":
