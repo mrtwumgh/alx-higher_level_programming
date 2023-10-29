@@ -1,0 +1,41 @@
+===========================
+How to use 0-add_integer.py
+===========================
+This function returns the sum of 2 integers
+
+``add_integer`` returns the sum of its arguments.
+
+::
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+	>>> add_integer(1, 2)
+	3
+
+	>>> add_integer(100, -2)
+	98
+
+	>>> add_integer(2)
+	100
+
+	>>> add_integer(100.3, -2)
+	98
+
+	>>> add_integer("henry", 3)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+	>>> add_integer("henry", "mark")
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+	>>> add_integer(3, "mark")
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+	>>> add_integer()
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
