@@ -9,8 +9,6 @@ How to use 5-text_indentation.py
 	Hello, world! How are you today?
 	<BLANKLINE>
 	I hope you're doing well.
-	<BLANKLINE>
-	<BLANKLINE>
 
 	>>> text_indentation("   Hello, world!   ")
 	Hello, world!

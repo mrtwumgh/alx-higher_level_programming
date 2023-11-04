@@ -13,7 +13,10 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     for char in ['.', '?', ':']:
-        text = text.replace(char, char + '\n\n')
+        if text.rfind(char) == len(text) - 1:
+            text = text.replace(char, char)
+        else:
+            text = text.replace(char, char + '\n\n')
     lines = text.split('\n')
     lines = [line.strip() for line in lines]
     text = '\n'.join(lines)
