@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+module for printing a square
+"""
+
+
 def print_square(size):
     """
     prints a square based on size
