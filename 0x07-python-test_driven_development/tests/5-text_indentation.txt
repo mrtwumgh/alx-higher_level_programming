@@ -1,0 +1,36 @@
+================================
+How to use 5-text_indentation.py
+================================
+
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+	>>> text_indentation("Hello, world! How are you today? I hope you're doing well.")
+	Hello, world! How are you today?
+	<BLANKLINE>
+	I hope you're doing well.
+	<BLANKLINE>
+	<BLANKLINE>
+
+	>>> text_indentation("   Hello, world!   ")
+	Hello, world!
+
+	>>> text_indentation("")
+	<BLANKLINE>
+
+	>>> text_indentation(234)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
+
+	>>> text_indentation("Hello,    world!")
+	Hello,    world!
+
+	>>> text_indentation("Hello,\nworld!")
+	Hello,
+	world!
+
+	>>> text_indentation()
+	Traceback (most recent call last):
+		...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
