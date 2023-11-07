@@ -22,13 +22,13 @@ How to use 1-my_list.py
 	>>> mylist4.print_sorted()
 	Traceback (most recent call last):
 		...
-	NameError: name 'mylist4' is not defined. Did you mean: 'mylist'?
+	NameError: name 'mylist4' is not defined
 
 	>>> new_list = [2, 9, 3, 4]
 	>>> mylist = MyList(new_list)
 	>>> mylist.print_sorted()
 	[2, 3, 4, 9]
-	
+
 	>>> new_list = []
 	>>> mylist = MyList(new_list)
 	>>> mylist.print_sorted()
