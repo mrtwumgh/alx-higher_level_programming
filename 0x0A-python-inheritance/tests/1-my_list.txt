@@ -1,0 +1,63 @@
+=======================
+How to use 1-my_list.py
+=======================
+
+
+::
+
+	>>> MyList = __import__('1-my_list').MyList
+	>>> mylist = MyList()
+	>>> mylist.append(4)
+	>>> mylist.append(3)
+	>>> mylist.append(2)
+	>>> mylist.append(5)
+	>>> print(mylist)
+	[4, 3, 2, 5]
+	>>> mylist.print_sorted()
+	[2, 3, 4, 5]
+	>>> print(mylist)
+	[4, 3, 2, 5]
+
+	>>> MyList = __import__('1-my_list').MyList
+	>>> mylist4.print_sorted()
+	Traceback (most recent call last):
+		...
+	NameError: name 'mylist4' is not defined. Did you mean: 'mylist'?
+
+	>>> new_list = [2, 9, 3, 4]
+	>>> mylist = MyList(new_list)
+	>>> mylist.print_sorted()
+	[2, 3, 4, 9]
+	
+	>>> new_list = []
+	>>> mylist = MyList(new_list)
+	>>> mylist.print_sorted()
+	[]
+
+	>>> mylist = MyList()
+	>>> mylist.append(3)
+	>>> mylist.print_sorted()
+	[3]
+
+	>>> mylist = MyList()
+	>>> mylist.append(2)
+	>>> mylist.append(2)
+	>>> mylist.append(2)
+	>>> mylist.append(2)
+	>>> mylist.print_sorted()
+	[2, 2, 2, 2]
+
+	>>> mylist = [1, 3, 6, 7]
+	>>> mylist.print_sorted()
+	Traceback (most recent call last):
+		...
+	AttributeError: 'list' object has no attribute 'print_sorted'
+
+	>>> mylist = MyList()
+	>>> mylist.append(-3)
+	>>> mylist.append(3)
+	>>> mylist.append(7)
+	>>> mylist.append(4)
+	>>> mylist.append(-2)
+	>>> mylist.print_sorted()
+	[-3, -2, 3, 4, 7]
