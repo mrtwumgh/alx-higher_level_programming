@@ -49,6 +49,27 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(self.r2.x, 3)
         self.assertEqual(self.r2.y, 5)
 
+    def test_invalid_values(self):
+        """
+        tests invalud values for setters
+        """
+        with self.assertRaises(TypeError):
+            self.r1.width = "invalid_integer"
+        with self.assertRaises(ValueError):
+            self.r1.width = 0
+        with self.assertRaises(TypeError):
+            self.r1.height = "invalid_integer"
+        with self.assertRaises(ValueError):
+            self.r1.height = 0
+        with self.assertRaises(TypeError):
+            self.r1.x = "invalid_integer"
+        with self.assertRaises(ValueError):
+            self.r1.x = -2
+        with self.assertRaises(TypeError):
+            self.r1.y = "invalid_integer"
+        with self.assertRaises(ValueError):
+            self.r1.y = -3
+
     def tearDown(self):
         """
         teardown of instances
