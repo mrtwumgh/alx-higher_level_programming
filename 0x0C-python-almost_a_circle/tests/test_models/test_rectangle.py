@@ -5,6 +5,8 @@ A module that tests the rectangle class
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from io import StringIO
+import sys
 
 
 class TestRectangleClass(unittest.TestCase):
@@ -34,7 +36,7 @@ class TestRectangleClass(unittest.TestCase):
         test case for checking id
         """
         self.assertEqual(self.r1.id, 12)
-        self.assertEqual(self.r2.id, 5)
+        self.assertEqual(self.r2.id, 7)
 
     def test_setters(self):
         """
@@ -77,6 +79,19 @@ class TestRectangleClass(unittest.TestCase):
         """
         self.assertEqual(self.r2.area(), 21)
         self.assertEqual(self.r3.area(), 40)
+
+    def test_display(self):
+        """
+        tests the output of the display method
+        """
+        captured_output = StringIO()
+        sys.stdout = captured_output
+
+        self.r1.display()
+
+        sys.stdout = sys.__stdout__
+        expected_output = "##########\n" * 2
+        self.assertEqual(captured_output.getvalue(), expected_output)
 
     def tearDown(self):
         """
