@@ -100,9 +100,9 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(str(self.r2), "[Rectangle] (13) 1/1 - 3/7")
         self.assertEqual(str(self.r1), "[Rectangle] (12) 0/0 - 10/2")
 
-    def test_update(self):
+    def test_update_args(self):
         """
-        tests the update method
+        tests the update method with args
         """
         self.r1.update(10, 3, 4, 2, 1)
 
@@ -111,6 +111,17 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(self.r1.height, 4)
         self.assertEqual(self.r1.x, 2)
         self.assertEqual(self.r1.y, 1)
+
+    def test_update_kwargs(self):
+        """
+        tests the update method with kwargs
+        """
+        self.r1.update(width = 5, height = 8, y = 6, x = 3)
+
+        self.assertEqual(self.r1.width, 5)
+        self.assertEqual(self.r1.height, 8)
+        self.assertEqual(self.r1.x, 3)
+        self.assertEqual(self.r1.y, 6)
 
     def tearDown(self):
         """
