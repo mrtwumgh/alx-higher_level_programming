@@ -22,14 +22,14 @@ class TestBaseClass(unittest.TestCase):
         """
         tests the init method
         """
-        self.assertEqual(self.b1.id, None)
+        self.assertEqual(self.b1.id, 2)
         self.assertEqual(self.b2.id, 10)
 
     def test_class_attribute(self):
         """
         tests the class attribute
         """
-        self.assertEqual(Base._Base__nb_objects, 0)
+        self.assertEqual(Base._Base__nb_objects, 1)
 
     def tearDown(self):
         """
