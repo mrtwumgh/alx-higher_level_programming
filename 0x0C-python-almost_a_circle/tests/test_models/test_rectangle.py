@@ -100,6 +100,18 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(str(self.r2), "[Rectangle] (13) 1/1 - 3/7")
         self.assertEqual(str(self.r1), "[Rectangle] (12) 0/0 - 10/2")
 
+    def test_update(self):
+        """
+        tests the update method
+        """
+        self.r1.update(10, 3, 4, 2, 1)
+
+        self.assertEqual(self.r1.id, 10)
+        self.assertEqual(self.r1.width, 3)
+        self.assertEqual(self.r1.height, 4)
+        self.assertEqual(self.r1.x, 2)
+        self.assertEqual(self.r1.y, 1)
+
     def tearDown(self):
         """
         teardown of instances
