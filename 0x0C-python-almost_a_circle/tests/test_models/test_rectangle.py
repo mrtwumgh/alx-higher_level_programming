@@ -87,10 +87,10 @@ class TestRectangleClass(unittest.TestCase):
         captured_output = StringIO()
         sys.stdout = captured_output
 
-        self.r1.display()
+        self.r2.display()
 
         sys.stdout = sys.__stdout__
-        expected_output = "##########\n" * 2
+        expected_output = "\n ###\n ###\n ###\n ###\n ###\n ###\n ###\n"
         self.assertEqual(captured_output.getvalue(), expected_output)
 
     def test_str(self):
