@@ -93,6 +93,13 @@ class TestRectangleClass(unittest.TestCase):
         expected_output = "##########\n" * 2
         self.assertEqual(captured_output.getvalue(), expected_output)
 
+    def test_str(self):
+        """
+        tests the str method
+        """
+        self.assertEqual(str(self.r2), "[Rectangle] (13) 1/1 - 3/7")
+        self.assertEqual(str(self.r1), "[Rectangle] (12) 0/0 - 10/2")
+
     def tearDown(self):
         """
         teardown of instances
