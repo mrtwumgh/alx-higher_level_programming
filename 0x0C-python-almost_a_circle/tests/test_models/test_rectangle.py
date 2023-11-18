@@ -123,6 +123,19 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(self.r1.x, 3)
         self.assertEqual(self.r1.y, 6)
 
+    def test_to_dictionary(self):
+        """
+        tests the to_dictionary method
+        """
+        expected_result = {
+                "id": 12,
+                "width": 10,
+                "height": 2,
+                "x": 0,
+                "y": 0
+        }
+        self.assertEqual(self.r1.to_dictionary(), expected_result)
+
     def tearDown(self):
         """
         teardown of instances
