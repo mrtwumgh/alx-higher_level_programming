@@ -77,6 +77,7 @@ class Base:
         returns a list of instances
         """
         list_of_objects = []
+        objects = []
         filename = cls.__name__ + ".json"
         with open(filename, "r") as file:
             if file is None:
