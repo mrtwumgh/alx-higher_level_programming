@@ -79,11 +79,13 @@ class Base:
         filename = cls.__name__ + ".json"
         list_of_objects = []
         objects = []
-        if os.path.exists(filename):
+        try:
             with open(filename, "r") as file:
                 objects = cls.from_json_string(file.read())
+        except FileNotFoundError:
+            return []
 
-            for obj in objects:
-                list_of_objects.append(cls.create(**obj))
+        for obj in objects:
+            list_of_objects.append(cls.create(**obj))
 
         return list_of_objects
