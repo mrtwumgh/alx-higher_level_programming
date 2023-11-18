@@ -76,9 +76,9 @@ class Base:
         """
         returns a list of instances
         """
+        filename = cls.__name__ + ".json"
         list_of_objects = []
         objects = []
-        filename = cls.__name__ + ".json"
         if os.path.exists(filename):
             with open(filename, "r") as file:
                 objects = cls.from_json_string(file.read())
