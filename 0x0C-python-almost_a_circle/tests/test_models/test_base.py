@@ -146,6 +146,29 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(s5.x, 3)
         self.assertEqual(s5.y, 4)
 
+    def test_load_from_file(self):
+        """
+        tests the load_from_file method
+        """
+        r6 = Rectangle(10, 7, 2, 8)
+        r7 = Rectangle(2, 4)
+
+        Rectangle.save_to_file([r6, r7])
+
+        rectangles = Rectangle.load_from_file()
+
+        self.assertEqual(len(rectangles), 2)
+
+        self.assertEqual(rectangles[0].width, 10)
+        self.assertEqual(rectangles[0].height, 7)
+        self.assertEqual(rectangles[0].x, 2)
+        self.assertEqual(rectangles[0].y, 8)
+
+        self.assertEqual(rectangles[1].width, 2)
+        self.assertEqual(rectangles[1].height, 4)
+        self.assertEqual(rectangles[1].x, 0)
+        self.assertEqual(rectangles[1].y, 0)
+
     def tearDown(self):
         """
         teardown of objects
