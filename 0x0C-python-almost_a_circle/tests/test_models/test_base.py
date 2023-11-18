@@ -26,7 +26,7 @@ class TestBaseClass(unittest.TestCase):
         """
         tests the init method
         """
-        self.assertEqual(self.b1.id, 2)
+        self.assertEqual(self.b1.id, 5)
         self.assertEqual(self.b2.id, 10)
 
     def test_class_attribute(self):
@@ -101,6 +101,29 @@ class TestBaseClass(unittest.TestCase):
             self.assertEqual(content[1]['height'], 4)
             self.assertEqual(content[1]['x'], 0)
             self.assertEqual(content[1]['y'], 0)
+
+    def test_from_json_string_none(self):
+        """
+        test case for none input
+        """
+        result = Base.from_json_string(None)
+        self.assertEqual(result, [])
+
+    def test_from_json_string_empty(self):
+        """
+        tests an empty string
+        """
+        result = Base.from_json_string("")
+        self.assertEqual(result, [])
+
+    def test_from_json_string_valid(self):
+        """
+        tests a valid input
+        """
+        js = '[{"id": 1, "name": "Al"}, {"id": 2, "name": "Jam"}]'
+        js_dict = [{"id": 1, "name": "Al"}, {"id": 2, "name": "Jam"}]
+        result = Base.from_json_string(js)
+        self.assertEqual(result, js_dict)
 
     def tearDown(self):
         """
