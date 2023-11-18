@@ -36,7 +36,7 @@ class TestRectangleClass(unittest.TestCase):
         test case for checking id
         """
         self.assertEqual(self.r1.id, 12)
-        self.assertEqual(self.r2.id, 7)
+        self.assertEqual(self.r2.id, 29)
 
     def test_setters(self):
         """
@@ -97,7 +97,7 @@ class TestRectangleClass(unittest.TestCase):
         """
         tests the str method
         """
-        self.assertEqual(str(self.r2), "[Rectangle] (13) 1/1 - 3/7")
+        self.assertEqual(str(self.r2), "[Rectangle] (35) 1/1 - 3/7")
         self.assertEqual(str(self.r1), "[Rectangle] (12) 0/0 - 10/2")
 
     def test_update_args(self):

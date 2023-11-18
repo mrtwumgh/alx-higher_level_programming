@@ -36,7 +36,7 @@ class TestSquare(unittest.TestCase):
         test case for checking if Square inherits id
         """
         self.assertEqual(self.s1.id, 1)
-        self.assertEqual(self.s2.id, 10)
+        self.assertEqual(self.s2.id, 52)
 
     def test_setters_values(self):
         """
@@ -91,7 +91,7 @@ class TestSquare(unittest.TestCase):
         """
         test magic method str
         """
-        self.assertEqual(str(self.s3), "[Square] (20) 0/0 - 4")
+        self.assertEqual(str(self.s3), "[Square] (62) 0/0 - 4")
 
     def test_update_args(self):
         """
@@ -117,7 +117,7 @@ class TestSquare(unittest.TestCase):
         tests the to_dictionary method
         """
         expected_result = {
-                "id": 23,
+                "id": 65,
                 "size": 4,
                 "x": 0,
                 "y": 0
