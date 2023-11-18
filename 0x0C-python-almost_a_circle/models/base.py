@@ -80,7 +80,7 @@ class Base:
         objects = []
         filename = cls.__name__ + ".json"
         with open(filename, "r") as file:
-            if file is None:
+            if file:
                 return []
             else:
                 objects = cls.from_json_string(file.read())
