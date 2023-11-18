@@ -31,6 +31,36 @@ class TestBaseClass(unittest.TestCase):
         """
         self.assertEqual(Base._Base__nb_objects, 1)
 
+    def test_to_json_string_empty(self):
+        """
+        tests an empty list
+        """
+        result = Base.to_json_string([])
+        self.assertEqual(result, "[]")
+
+    def test_to_json_string_none(self):
+        """
+        tests case for none input
+        """
+        result = Base.to_json_string(None)
+        self.assertEqual(result, "[]")
+
+    def test_to_json_string_valid(self):
+        """
+        tests a valid input
+        """
+        dicts = [{
+            "id": 1,
+            "name": "Alice"
+            },
+            {
+            "id": 2,
+            "name": "James"
+        }]
+        result = Base.to_json_string(dicts)
+        expected_result = '[{"id": 1, "name": "Alice"}, {"id": 2, "name": "James"}]'
+        self.assertEqual(result, expected_result)
+
     def tearDown(self):
         """
         teardown of objects
