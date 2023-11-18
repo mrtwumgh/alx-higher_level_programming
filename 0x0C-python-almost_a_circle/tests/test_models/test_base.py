@@ -26,7 +26,7 @@ class TestBaseClass(unittest.TestCase):
         """
         tests the init method
         """
-        self.assertEqual(self.b1.id, 5)
+        self.assertEqual(self.b1.id, 9)
         self.assertEqual(self.b2.id, 10)
 
     def test_class_attribute(self):
@@ -124,6 +124,27 @@ class TestBaseClass(unittest.TestCase):
         js_dict = [{"id": 1, "name": "Al"}, {"id": 2, "name": "Jam"}]
         result = Base.from_json_string(js)
         self.assertEqual(result, js_dict)
+
+    def test_create_rectangle(self):
+        """
+        tests the create method for Rectangle
+        """
+        r5 = Rectangle.create(id=1, width=2, height=3, x=4, y=5)
+        self.assertEqual(r5.id, 1)
+        self.assertEqual(r5.width, 2)
+        self.assertEqual(r5.height, 3)
+        self.assertEqual(r5.x, 4)
+        self.assertEqual(r5.y, 5)
+
+    def test_create_square(self):
+        """
+        tests the create method for Square
+        """
+        s5 = Square.create(id=1, size=2, x=3, y=4)
+        self.assertEqual(s5.id, 1)
+        self.assertEqual(s5.size, 2)
+        self.assertEqual(s5.x, 3)
+        self.assertEqual(s5.y, 4)
 
     def tearDown(self):
         """
