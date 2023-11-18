@@ -112,6 +112,18 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.s3.size, 5)
         self.assertEqual(self.s3.y, 3)
 
+    def test_to_dictionary(self):
+        """
+        tests the to_dictionary method
+        """
+        expected_result = {
+                "id": 23,
+                "size": 4,
+                "x": 0,
+                "y": 0
+        }
+        self.assertEqual(self.s3.to_dictionary(), expected_result)
+
     def tearDown(self):
         """
         tear down instances
